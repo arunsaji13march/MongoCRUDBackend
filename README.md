@@ -1,5 +1,21 @@
 # MongoCRUDBackend
 Backend Service using spring boot 
+port=8080
+
+Get all users
+http://localhost:8080/api/v1/getAllUsers
+
+Add user
+http://localhost:8080/api/v1/addUser
+
+Update user by id
+http://localhost:8080/api/v1/updateUser/{id}
+
+delete user by id
+http://localhost:8080/api/v1/deleteUser/{id}
+
+get user details by id
+http://localhost:8080/api/v1/getUserById/{id}
  
  #Configurations befroe running application
  
@@ -9,13 +25,13 @@ Backend Service using spring boot
  
  create a collection named User
  {
-  "_id": 3,
-  "name": "yahoo",
-  "age": 22,
-  "email": "ajay@gmail.com",
-  "sex": "M",
-  "job": "Developer",
-  "friends": ["Boss", "ajay", "lavish" ]
+  "_id":'',
+  "name": "",
+  "age": ,
+  "email": "",
+  "sex": "", (M or F)
+  "job": "",
+  "friends": Array
 }
  
  #To run application
