@@ -17,7 +17,7 @@ http://localhost:8080/api/v1/deleteUser/{id}
 get user details by id
 http://localhost:8080/api/v1/getUserById/{id}
  
- #Configurations befroe running application
+ #Configurations before running application
  
  write you mongodb uri and database name  in resouces > application.properties
  spring.data.mongodb.database=Arun
