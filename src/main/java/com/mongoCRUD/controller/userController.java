@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.mongoCRUD.exceptions.NoUserExistsException;
@@ -52,9 +53,11 @@ public class userController {
 	}
 	
 	@GetMapping("/getAllUsers")
-	public ResponseEntity<?> getAllUsersHandle(){
+	public ResponseEntity<?> getAllUsersHandle(
+			@RequestParam(value = "pageNumber",defaultValue = "1",required = false) Integer pageNumber,
+			@RequestParam(value = "pageSize",defaultValue = "5",required = false)Integer pageSize){
 		System.out.println("getAllUsers");
-		List<User> userList=this.iUserServices.getAllUsers();
+		List<User> userList=this.iUserServices.getAllUsers(pageNumber,pageSize);
 		System.out.println(userList.get(0));
 		responseEntity=new ResponseEntity<>(userList,HttpStatus.OK);
 		return responseEntity;
